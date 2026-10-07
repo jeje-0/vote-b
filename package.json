@@ -1,9 +1,0 @@
-{
-  "name": "ivf-vote",
-  "version": "1.0.0",
-  "description": "IVF 제22차 정기총회 법인이사 선출 전자투표",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  }
-}
