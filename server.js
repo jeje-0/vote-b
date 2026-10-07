@@ -11,7 +11,7 @@ const TOTAL_TARGET = 10;
 
 // 테스트 모드: TEST_MODE=1 로 실행하면 '기기당 1표 제한'만 꺼집니다.
 // 실제 투표 때는 이 환경변수를 지우거나 0으로 두세요.
-const TEST_MODE = process.env.TEST_MODE === '1';
+const TEST_MODE = process.env.TEST_MODE === '0';
 
 // Upstash Redis 환경변수가 설정되어 있으면 그걸 영구 저장소로 사용하고,
 // 없으면 로컬 테스트를 위해 votes.json 파일을 그대로 사용합니다.
