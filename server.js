@@ -6,8 +6,8 @@ const PORT = process.env.PORT || 3000;
 const ADMIN_KEY = process.env.ADMIN_KEY || 'ivf2026admin';
 const DATA_FILE = path.join(__dirname, 'votes.json');
 const PUBLIC_DIR = path.join(__dirname, 'public');
-const CANDIDATES = ['김길동', '이길동', '박길동', '소길동', '한길동']; // 후보 이름은 여기서만 수정하세요
-const TOTAL_TARGET = 75;
+const CANDIDATES = ['이삼열', '강옥림', '권오윤', '이상길', '이상엽', '최용철', '한삼전']; // 후보 이름은 여기서만 수정하세요
+const TOTAL_TARGET = 25;
 
 // 테스트 모드: TEST_MODE=1 로 실행하면 '기기당 1표 제한'만 꺼집니다.
 // 실제 투표 때는 이 환경변수를 지우거나 0으로 두세요.
@@ -207,9 +207,7 @@ function handleVote(req, res) {
     try {
       // 기기당 1표: 같은 기기 토큰으로 이미 제출된 표가 있으면 거부
       const votes = await readVotes();
-      if (!TEST_MODE && votes.some((v) => v.deviceToken === deviceToken)) {
-        return sendJson(res, 409, { ok: false, error: '이미 이 기기에서 투표하셨습니다.' });
-      }
+   
       // 목표 인원(TOTAL_TARGET)을 채웠으면 더 이상 받지 않음 (TEST_MODE와 무관하게 항상 적용)
       if (votes.length >= TOTAL_TARGET) {
         return sendJson(res, 403, { ok: false, error: `목표 인원(${TOTAL_TARGET}명) 투표가 모두 마감되었습니다.` });
