@@ -45,7 +45,7 @@ function buildTable(data){
   const table = document.getElementById('resultsTable');
   table.innerHTML = '';
   const legend = document.getElementById('legendText');
-  if(legend) legend.textContent = '※ ' + WIN_LABEL + ' 기준: ' + conditionText() + ' (재적 인원의 절반을 넘는 찬성) 조건을 모두 충족해야 ' + WIN_LABEL + '입니다. 초록 ✓는 해당 기준의 과반 달성 표시입니다.';
+  if(legend) legend.textContent = '※ ' + WIN_LABEL + ' 기준: ' + conditionText() + ' (재적 인원의 절반을 넘는 찬성) 조건을 모두 충족해야 ' + WIN_LABEL + '입니다.';
 
   const groupParticipants = data.groupParticipants || {};
   const enrolled = data.enrolled || {};
