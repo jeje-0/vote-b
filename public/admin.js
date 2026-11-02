@@ -23,13 +23,13 @@ async function tryLoad(){
   }
 }
 
-// ===== 통과 조건 (직접 바꾸려면 아래 세 줄만 고치면 됩니다) =====
+// ===== 가결 조건 (직접 바꾸려면 아래 세 줄만 고치면 됩니다) =====
 // REQUIRED_GROUPS : 해당 구분 재적 인원의 과반 찬성이 필요한 구분 ('이사', '간사', '학생·학사' 중에서 고름, 없으면 [])
 // REQUIRE_TOTAL   : true 이면 전체(합계) 재적 인원의 과반 찬성이 필요
 // WIN_LABEL       : 조건을 충족했을 때 결과 칸에 표시할 말
 const REQUIRED_GROUPS = [];
 const REQUIRE_TOTAL = true;
-const WIN_LABEL = '통과';
+const WIN_LABEL = '가결';
 
 function majorityNeed(enrolled){
   return enrolled > 0 ? Math.floor(enrolled / 2) + 1 : 0;
@@ -118,7 +118,7 @@ function buildTable(data){
       tr.innerHTML += `<td class="cell-${CHOICE_CLASS[c]} total-cell${pass}">${totals[c]}</td>`;
     });
 
-    // 결과: REQUIRED_GROUPS 각 구분의 과반 찬성 AND (REQUIRE_TOTAL 이면) 전체 과반 찬성 -> 통과
+    // 결과: REQUIRED_GROUPS 각 구분의 과반 찬성 AND (REQUIRE_TOTAL 이면) 전체 과반 찬성 -> 가결
     const conds = REQUIRED_GROUPS.map(g => ({
       label: GROUP_LABEL[g],
       need: majorityNeed(enrolled[g] ?? 0),
