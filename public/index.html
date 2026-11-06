@@ -133,6 +133,9 @@
 .badge-round{white-space:nowrap;font-size:clamp(11px,3.2vw,13px);}
 .desc{font-size:clamp(12.5px,3.7vw,14px);word-break:keep-all;text-wrap:balance;}
 h1,h2,.title{word-break:keep-all;text-wrap:balance;}
+/* 바닥글: 들어가면 한 줄, 글자가 커진 폰에서는 두 덩어리로 깔끔하게 줄바꿈 */
+.site-footer{font-size:min(3.2vw,12.5px);line-height:1.8;padding-left:8px;padding-right:8px;}
+.site-footer span{display:inline-block;white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -209,7 +212,8 @@ h1,h2,.title{word-break:keep-all;text-wrap:balance;}
 
 </div>
 
-<footer class="site-footer">제22차 IVF정기총회 · 2026년 11월 7일(토) · 신용산교회 2층 유스홀</footer>
+<footer class="site-footer"><span>제22차 IVF정기총회 · 2026년 11월 7일(토) ·</span> <span>신용산교회 2층 유스홀</span></footer>
+
 
 <script src="app.js"></script>
 </body>
