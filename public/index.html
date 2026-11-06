@@ -127,6 +127,13 @@
     .panel{max-width:640px;margin-left:auto;margin-right:auto;
       border-radius:28px;margin-top:-50px;padding:40px 40px 56px;}
   }
+  /* 휴대폰 화면 폭이 달라도 글자가 어색하게 잘리지 않게 */
+.logo-row{flex-wrap:wrap;row-gap:8px;gap:8px;}
+.logo span{white-space:nowrap;font-size:clamp(10px,3.1vw,13px);}
+.badge-round{white-space:nowrap;font-size:clamp(11px,3.2vw,13px);}
+.logo-img{height:clamp(16px,5vw,20px);}
+.desc{font-size:clamp(12.5px,3.7vw,14px);word-break:keep-all;text-wrap:balance;}
+h1,h2,.title{word-break:keep-all;text-wrap:balance;}
 </style>
 </head>
 <body>
